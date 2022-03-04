@@ -7,7 +7,7 @@ def_name(){
     done
 }
 
-date=$(date +%Y/%m/%d)
+date=$(date "+%Y/%m/%d %H:%M:%S")
 echo -e "$header"
 if [ $1 == "-d" ]; then
     param=( $( find $2 -name "*.c" ) $( find $2 -name "*.h" ) )
@@ -26,8 +26,8 @@ do
     header+="/*                                                    +:+ +:+         +:+     */\n"
     header+="/*   By: yalthaus <marvin@42lausanne.ch>            +#+  +:+       +#+        */\n"
     header+="/*                                                +#+#+#+#+#+   +#+           */\n"
-    header+="/*   Created: $date 12:23:24 by yalthaus          #+#    #+#             */\n"
-    header+="/*   Updated: $date 14:35:19 by yalthaus         ###   ########.fr       */\n"
+    header+="/*   Created: $date by yalthaus          #+#    #+#             */\n"
+    header+="/*   Updated: $date by yalthaus         ###   ########.fr       */\n"
     header+="/*                                                                            */\n"
     header+="/******************************************************************************/\n"
     if [[ $(head -c 80 $file) != "${header::80}" ]]; then
